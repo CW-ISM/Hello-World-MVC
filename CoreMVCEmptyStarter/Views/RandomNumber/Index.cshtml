@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Random Number";
+}
+
+<h2 style="text-align: center;">@ViewData["Title"]</h2>
+
+<p style="text-align: center;">Your random number is: <strong id="number">@ViewBag.RandomNumber</strong></p>
+
+<form method="get" asp-controller="RandomNumber" asp-action="Index">
+    <button type="submit">Generate New Number</button>
+</form>
+
+<script>
+    document.getElementById("generate").addEventListener("click", function () {
+        fetch('/RandomNumber/GetRandomNumber')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("number").textContent = data;
+            })
+            .catch(error => {
+                console.error("Error fetching random number:", error);
+            });
+    });
+</script>

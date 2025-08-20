@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Local Time";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Current time is: <span id="timeDisplay">@ViewBag.CurrentTime</span></h3>
+
+<script>
+    function updateTime() {
+        fetch('/LocalTime/GetCurrentTime') // hits your controller method
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('timeDisplay').innerText = data;
+            });
+    }
+
+    setInterval(updateTime, 1000);
+</script>

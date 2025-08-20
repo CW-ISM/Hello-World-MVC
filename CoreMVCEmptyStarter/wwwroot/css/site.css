@@ -1,0 +1,90 @@
+﻿/* Full body outline */
+body {
+    height: 100vh;
+    margin: 0;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: #eff1f1;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar outline and layout */
+nav {
+    width: 100vw;
+    border-bottom: 2px solid black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 60px; /* Set a consistent navbar height */
+}
+
+/* Nav list horizontal layout */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Equal width nav items */
+nav li {
+    flex: 1;
+    font-weight: bold;
+}
+
+/* Links styled like skeleton buttons */
+nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* Remove left border */
+    border-left: none;
+    /* Add only right border except for last */
+    border-right: 2px solid black;
+    color: #333;
+    background-color: transparent;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+/* Remove right border on last item so no trailing border */
+nav li:last-child a {
+    border-right: none;
+}
+
+/* Hover effect */
+nav li a:hover {
+    background-color: darkgray;
+}
+
+main {
+    margin: 0;
+    padding: 0em 2vw;
+}
+
+.rng h2, p {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: darkgray;
+}
